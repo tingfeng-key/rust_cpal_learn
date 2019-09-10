@@ -1,0 +1,11 @@
+[package]
+name = "cpal"
+version = "0.1.0"
+authors = ["tingfeng-key <1770963469@qq.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cpal = "0.10.0"
+minimp3 = "0.3.3"
