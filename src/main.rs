@@ -6,7 +6,7 @@ fn main() {
     let mut audio = AudioPlayBack::new();
     audio.playback();
     audio.run("res/dnxk.mp3");
-    thread::sleep(Duration::from_secs(10));
+    thread::sleep(Duration::from_secs(80));
     audio.run("res/情歌王 - 古巨基.mp3");
     thread::park();
 
@@ -42,25 +42,28 @@ impl Audio {
     pub fn play(&mut self, source_path: &str) {
         self.source_path = Some(String::from(source_path));
         self.current_source_data = Vec::new();
+        let data = self.decoder();
         self.current_frame_data_index = 0;
-        self.decoder();
+        self.current_source_data = data;
     }
     //解码
-    fn decoder(&mut self) {
+    fn decoder(&mut self) -> Vec<i16>{
         use minimp3::Decoder;
         use std::{fs::File, path::Path};
 
-        let source_path = self.source_path.clone().unwrap();
+        println!("解码开始...");
+        let source_path = self.source_path.clone().expect("source_path error");
         let source_file = File::open(
             Path::new(&source_path)
         ).expect("打开资源文件失败...");
         let mut decoder = Decoder::new(source_file);
+        let mut data = Vec::new();
         loop {
             match decoder.next_frame() {
                 Ok(mut f) => {
                     for sample in f.data.chunks_mut(f.channels as usize) {
                         for a in sample.iter_mut() {
-                            self.current_source_data.push(a.clone());
+                            data.push(a.clone());
                         }
                     }
                     if self.current_frame_channel == 0 {
@@ -73,6 +76,7 @@ impl Audio {
                 }
             }
         }
+        data
     }
     //获取输出值
     fn get_next_value(&mut self) -> f32 {
@@ -106,7 +110,7 @@ impl AudioPlayBack {
     }
     //播放音频
     pub fn run(&self, source_path: &str) {
-        self.audio.lock().unwrap().play(source_path);
+        self.audio.lock().expect("play error").play(source_path);
     }
     //后台运行
     pub fn playback(&mut self) {
@@ -122,8 +126,8 @@ impl AudioPlayBack {
         let device = host.default_output_device().expect("Failed to get default output device");
         let format = device.default_output_format().expect("Failed to get default output format");
         let event_loop = host.event_loop();
-        let stream_id = event_loop.build_output_stream(&device, &format).unwrap();
-        event_loop.play_stream(stream_id.clone()).unwrap();
+        let stream_id = event_loop.build_output_stream(&device, &format).expect("build_output_stream error");
+        event_loop.play_stream(stream_id.clone()).expect("play_stream error");
         let audio = self.audio.clone();
         thread::spawn(move || {
             event_loop.run(move |stream_id, stream_result| {
@@ -150,7 +154,7 @@ impl AudioPlayBack {
                     Output { buffer: F32(mut buffer) } => {
                         for sample in buffer.chunks_mut(format.channels as usize) {
                             for out in sample.iter_mut() {
-                                *out = audio.lock().unwrap().get_next_value();
+                                *out = audio.lock().expect("get_next_value error").get_next_value();
                             }
                         }
                     },
