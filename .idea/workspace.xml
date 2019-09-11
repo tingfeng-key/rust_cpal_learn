@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="128" column="62" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="62" />
+            <state relative-caret-position="382">
+              <caret line="130" column="62" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
               <folding>
                 <element signature="e#1180#2169#0" />
                 <element signature="e#2222#2842#0" />
@@ -47,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.cargo/registry/src/code.aliyun.com-738b7dba08a2a41e/cpal-0.10.0/examples/enumerate.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="58" />
+            <state relative-caret-position="120">
+              <caret line="8" column="58" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="8" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -214,18 +214,18 @@
       <updated>1568128277427</updated>
       <workItem from="1568128279462" duration="7231000" />
       <workItem from="1568200649195" duration="129000" />
-      <workItem from="1568200816289" duration="491000" />
+      <workItem from="1568200816289" duration="561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7851000" />
+    <option name="totallyTimeSpent" value="7921000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.1879518" visible="true" weight="0.1687966" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.1879518" visible="true" weight="0.1687966" />
       <window_info id="Structure" order="1" sideWeight="0.81294966" side_tool="true" weight="0.24959612" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -237,7 +237,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31782177" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31782177" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -326,15 +326,15 @@
     </entry>
     <entry file="file://$USER_HOME$/.cargo/registry/src/code.aliyun.com-738b7dba08a2a41e/cpal-0.10.0/examples/enumerate.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="58" />
+        <state relative-caret-position="120">
+          <caret line="8" column="58" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="8" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="128" column="62" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="62" />
+        <state relative-caret-position="382">
+          <caret line="130" column="62" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
           <folding>
             <element signature="e#1180#2169#0" />
             <element signature="e#2222#2842#0" />

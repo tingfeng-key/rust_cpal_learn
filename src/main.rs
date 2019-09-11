@@ -127,6 +127,8 @@ impl AudioPlayBack {
         let format = device.default_output_format().expect("Failed to get default output format");
         let event_loop = host.event_loop();
         println!("Supported hosts:\n  {:?}", cpal::ALL_HOSTS);
+        let available_hosts = cpal::available_hosts();
+        println!("Available hosts:\n  {:?}", available_hosts);
         println!("{:#?}", format);
         let stream_id = event_loop.build_output_stream(&device, &format).expect("build_output_stream error");
         event_loop.play_stream(stream_id.clone()).expect("play_stream error");
